@@ -1,0 +1,10 @@
+server {
+    listen 80 default_server;
+    server_name _;
+    location /frontend {
+        proxy_pass http://frontend/;
+    }
+    location /emacs {
+        proxy_pass http://emacs:4200/;
+    }
+}
